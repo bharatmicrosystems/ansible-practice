@@ -8,8 +8,8 @@ k8sworker[01:50]' | sudo tee -a /etc/ansible/hosts
 sudo useradd ansible
 sudo su - ansible << EOF
 ssh-keygen -t rsa -f /home/ansible/.ssh/id_rsa -q -N ""
-EOF
 for var in "$@"
 do
     sshpass -p "Great@123" ssh-copy-id -o StrictHostKeyChecking=no ansible@${var}
 done
+EOF
